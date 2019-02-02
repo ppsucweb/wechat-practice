@@ -1,0 +1,17 @@
+.red-point {
+	position: relative;
+}
+
+.red-point::before {
+	content: " ";
+	background: red;
+	overflow: hidden;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1000;
+	right: 5px;
+	top: -5px;
+	margin-left: 0px;
+}
