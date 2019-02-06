@@ -32,9 +32,8 @@
 			}
 			var filters=[plus.barcode.QR,plus.barcode.EAN13,plus.barcode.EAN8];
 			
-			var newstyle={frameColor: "#0F0",scanbarColor: "#0F0"};
-			
 			function startRecognize() {
+				var newstyle={frameColor: "#0F0",scanbarColor: "#0F0"};
 				scan = new plus.barcode.Barcode('bcid',filters,newstyle);
 				scan.onmarked = onmarked;
 				scan.start();

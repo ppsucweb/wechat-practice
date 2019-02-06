@@ -10,6 +10,11 @@
 		<link href="../css/shark.css" rel="stylesheet" />
 		<title></title>
 		<script>
+			function remove(){
+				document.getElementById("up").classList.remove("sharkup_after")
+				document.getElementById("down").classList.remove("sharkdown_after")
+				audio.close
+			}
 			// 扩展API加载完毕后调用onPlusReady回调函数 
 			document.addEventListener("plusready", onPlusReady, false);
 			// 扩展API加载完毕，现在可以正常调用扩展API
@@ -25,7 +30,7 @@
 						document.getElementById("down").classList.add("sharkdown_after")
 						var audio = document.getElementById("bgMusic")
 						audio.play()
-						
+						setTimeout('remove()',2500)
 					};
 				}, function(e) {
 					alert("Orientation error: " + e.message);
