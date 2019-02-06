@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script src="../js/scan.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/icons-extra.css" rel="stylesheet" />
+		<title></title>
+		<script type="text/javascript">
+			// 扩展API加载完毕后调用onPlusReady回调函数 
+			document.addEventListener("plusready", startRecognize, false);
+			// 扩展API加载完毕，现在可以正常调用扩展API
+			
+			var scan = null;
+
+			function onmarked(type, result) {
+				var text = '未知: ';
+				switch (type) {
+					case plus.barcode.QR:
+						text = 'QR: ';
+						break;
+					case plus.barcode.EAN13:
+						text = 'EAN13: ';
+						break;
+					case plus.barcode.EAN8:
+						text = 'EAN8: ';
+						break;
+				}
+				alert(text + result);
+			}
+			var filters=[plus.barcode.QR,plus.barcode.EAN13,plus.barcode.EAN8];
+			
+			var newstyle={frameColor: "#0F0",scanbarColor: "#0F0"};
+			
+			function startRecognize() {
+				scan = new plus.barcode.Barcode('bcid',filters,newstyle);
+				scan.onmarked = onmarked;
+				scan.start();
+			}
+		</script>
+		<style type="text/css">
+			* {
+				-webkit-user-select: none;
+			}
+
+			html,
+			body {
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+			}
+
+			#bcid {
+				height: 480px;
+				width: 361px;
+				
+			}
+		</style>
+	</head>
+	<body style="background-color: #000000;">
+		<header class="mui-bar mui-bar-nav" style="background-color: #000000;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="text-align: left;margin-top: 2px;color: white;">二维码/条码</h1>
+		</header>
+		<div class="mui-content">
+			<div id="bcid"></div>
+		</div>
+		<script type="text/javascript">
+			startRecognize();
+		</script>
+	</body>
+</html>

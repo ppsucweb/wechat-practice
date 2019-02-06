@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script src="../js/scan.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/icons-extra.css" rel="stylesheet" />
+		<link href="../css/shark.css" rel="stylesheet" />
+		<title></title>
+		<script>
+			// 扩展API加载完毕后调用onPlusReady回调函数 
+			document.addEventListener("plusready", onPlusReady, false);
+			// 扩展API加载完毕，现在可以正常调用扩展API
+			function onPlusReady() {
+				plus.orientation.getCurrentOrientation(function(o) {
+					now_alpha = o.alpha;
+					now_beta = o.beta;
+					now_gamma = o.gamma;
+				});
+				plus.orientation.watchOrientation(function(o) {
+					if (o.alpha - now_alpha > 20) {
+						document.getElementById("up").classList.add("sharkup_after")
+						document.getElementById("down").classList.add("sharkdown_after")
+						var audio = document.getElementById("bgMusic")
+						audio.play()
+						
+					};
+				}, function(e) {
+					alert("Orientation error: " + e.message);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #ACACB4 ;box-shadow: none;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" style="text-align: left;color: white;margin-top: 1px;">摇一摇</h1>
+			<div style="text-align: right;color: white;">
+			<span class="mui-icon mui-icon-gear" ></span>
+			</div>
+		</header>
+		<div class="mydiv">
+			<div id="up" class="sharkup">
+				<p style="height: 50%;margin: 0;"> </p>
+				<img src="../img/shakeup.png" class="sharkup">
+			</div>
+			<div style="text-align:center;">
+				<img src="../img/background.jpg" class="shark_background" />
+			</div>
+			<div id="down" class="sharkdown">
+				<img src="../img/shakedown.png" class="sharkdown">
+			</div>
+		</div>
+		<audio src="../music/shake.wav" id="bgMusic">
+
+		</audio>
+	</body>
+</html>
