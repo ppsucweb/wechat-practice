@@ -7,38 +7,7 @@
 		<script src="../js/scan.js"></script>
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link href="../css/icons-extra.css" rel="stylesheet" />
-		<title></title>
-		<script type="text/javascript">
-			// 扩展API加载完毕后调用onPlusReady回调函数 
-			document.addEventListener("plusready", startRecognize, false);
-			// 扩展API加载完毕，现在可以正常调用扩展API
-			
-			var scan = null;
-
-			function onmarked(type, result) {
-				var text = '未知: ';
-				switch (type) {
-					case plus.barcode.QR:
-						text = 'QR: ';
-						break;
-					case plus.barcode.EAN13:
-						text = 'EAN13: ';
-						break;
-					case plus.barcode.EAN8:
-						text = 'EAN8: ';
-						break;
-				}
-				alert(text + result);
-			}
-			var filters=[plus.barcode.QR,plus.barcode.EAN13,plus.barcode.EAN8];
-			
-			function startRecognize() {
-				var newstyle={frameColor: "#0F0",scanbarColor: "#0F0"};
-				scan = new plus.barcode.Barcode('bcid',filters,newstyle);
-				scan.onmarked = onmarked;
-				scan.start();
-			}
-		</script>
+		<title>扫一扫</title>
 		<style type="text/css">
 			* {
 				-webkit-user-select: none;
@@ -67,6 +36,34 @@
 			<div id="bcid"></div>
 		</div>
 		<script type="text/javascript">
+			// 扩展API加载完毕后调用onPlusReady回调函数 
+			document.addEventListener("plusready", startRecognize, false);
+			// 扩展API加载完毕，现在可以正常调用扩展API
+			
+			function onmarked(type, result) {
+				var text = '未知: ';
+				switch (type) {
+					case plus.barcode.QR:
+						text = 'QR: ';
+						break;
+					case plus.barcode.EAN13:
+						text = 'EAN13: ';
+						break;
+					case plus.barcode.EAN8:
+						text = 'EAN8: ';
+						break;
+				}
+				alert(text + result);
+			}
+			var filters=[plus.barcode.QR,plus.barcode.EAN13,plus.barcode.EAN8];
+			
+			function startRecognize() {
+				var scan;
+				var newstyle={frameColor: "#0F0",scanbarColor: "#0F0"};
+				scan = new plus.barcode.Barcode('bcid',filters,newstyle);
+				scan.onmarked = onmarked;
+				scan.start();
+			}
 			startRecognize();
 		</script>
 	</body>

@@ -3,31 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
+		<title>发现</title>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<script src="../js/scan.js"></script>
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link href="../css/icons-extra.css" rel="stylesheet" />
+		<link href="../css/find.css" rel="stylesheet"/>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
 		<script type="text/javascript" charset="UTF-8">
-			function open_win() {
-					mui.openWindow({
-						url: 'scan.html',
-						id: 'scan'
-					});
-			}
-			function open_win2(){
+			function openWindow(filename, id) {
 				mui.openWindow({
-					url: 'shark.html',
-					id: 'shark'
-				});
-			}
-			function open_win3(){
-				mui.openWindow({
-					url: 'surprise.html',
-					id: 'surprise'
+					url: filename,
+					id: id
 				});
 			}
 		</script>
@@ -37,7 +25,7 @@
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/PYQ.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/PYQ.png"/>
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">朋友圈</h4>
 						</div>
@@ -45,17 +33,17 @@
 				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top:10px ;">
-				<li class="mui-table-view-cell text1" onclick="open_win()">
+				<li class="mui-table-view-cell" onclick="openWindow('scan.html','scan')">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/SYS.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/SYS.png" />
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">扫一扫</h4>
 						</div>
 					</a>
 				</li>
-				<li class="mui-table-view-cell" onclick="open_win2()">
+				<li class="mui-table-view-cell" onclick="openWindow('shark.html','shark')">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/YYY.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/YYY.png" />
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">摇一摇</h4>
 						</div>
@@ -63,9 +51,9 @@
 				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top:11px ;">
-				<li class="mui-table-view-cell" onclick="open_win3()">
+				<li class="mui-table-view-cell" onclick="openWindow('surprise.html','surprise')">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/KYK.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/KYK.png"/>
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">看一看</h4>
 						</div>
@@ -73,7 +61,7 @@
 				</li>
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/search.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/search.png"  />
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">搜一搜</h4>
 						</div>
@@ -83,7 +71,7 @@
 			<ul class="mui-table-view" style="margin-top:10px ;">
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/n_person.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/n_person.png" />
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">附近的人</h4>
 						</div>
@@ -93,7 +81,7 @@
 			<ul class="mui-table-view" style="margin-top:10px ;">
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/shopping.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/shopping.png" />
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">购物</h4>
 						</div>
@@ -101,7 +89,7 @@
 				</li>
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../img/YX.png" style="height: 20px;width: 20px;margin-top:8px;" />
+						<img class="mui-media-object mui-pull-left" src="../img/YX.png"/>
 						<div class="mui-media-body">
 							<h4 style="line-height: 28px;">游戏</h4>
 						</div>
