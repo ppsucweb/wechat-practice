@@ -3,3 +3,7 @@
 	color: #4CD964 !important;
 	fill: #4CD964;
 }
+.header_after{
+	display: none;
+	height: 22px;
+}
