@@ -81,8 +81,8 @@ var data = [{
 }];
 
 // 相关 DOM
-var $page = $('.page-moments');
-var $momentsList = $('.moments-list');
+var $page = document.querySelector('.page-moments');
+var $momentsList = document.querySelector('.moments-list');
 
 /**
  * 点赞内容 HTML 模板
@@ -205,7 +205,7 @@ function messageTpl(messageData) {
 function render() {
   // TODO: 目前只渲染了一个消息（多图片信息）,需要展示data数组中的所有消息数据。
   var messageHtml = messageTpl(data[0]);
-  $momentsList.html(messageHtml);
+  $momentsList.innerHTML += messageHtml;
 }
 
 
