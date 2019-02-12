@@ -14,13 +14,13 @@ var data = [{
 		timeString: '3分钟前'
 	},
 	reply: {
-		type:0,
+		type: 0,
 		hasLiked: false,
 		likes: ['Guo封面', '源小神'],
 		comments: [{
 			author: 'Guo封面',
 			text: '你也喜欢华仔哈！！！',
-			type:0,
+			type: 0,
 		}, {
 			author: '喵仔zsy',
 			text: '华仔实至名归哈'
@@ -44,7 +44,9 @@ var data = [{
 	reply: {
 		hasLiked: false,
 		likes: ['阳和'],
-		comments: [{type:1}]
+		comments: [{
+			type: 1
+		}]
 	}
 }, {
 	user: {
@@ -61,7 +63,9 @@ var data = [{
 	reply: {
 		hasLiked: false,
 		likes: [],
-		comments: [{type:2}]
+		comments: [{
+			type: 2
+		}]
 	}
 }, {
 	user: {
@@ -78,7 +82,9 @@ var data = [{
 	reply: {
 		hasLiked: false,
 		likes: [],
-		comments: [{type:3}]
+		comments: [{
+			type: 3
+		}]
 	}
 }];
 // 相关 DOM
@@ -90,25 +96,26 @@ var $momentsList = document.querySelector('.moments-list');
  * @param {Array} likes 点赞人列表
  * @return {String} 返回html字符串
  */
-function likesHtmlTpl(likes,comments) {
-	if (!likes.length) {
+function likesHtmlTpl(likes, comments) {
+	/*if (!likes.length) {
 		return '';
-	}
-	var type = comments[0].type;
-	switch(type){
+	}*/
+	/*var type = comments[0].type;
+	switch (type) {
 		case 0:
-		var htmlText = ['<div  id="reply-like0" class="reply-like"><i class="icon-like-blue"></i>'];
-		break;
+			var htmlText = ['<div  id="reply-like0" class="reply-like"><i class="icon-like-blue"></i>'];
+			break;
 		case 1:
-		var htmlText = ['<div  id="reply-like1" class="reply-like"><i class="icon-like-blue"></i>'];
-		break;
+			var htmlText = ['<div  id="reply-like1" class="reply-like"><i class="icon-like-blue"></i>'];
+			break;
 		case 2:
-		var htmlText = ['<div  id="reply-like2" class="reply-like"><i class="icon-like-blue"></i>'];
-		break;
+			var htmlText = ['<div  id="reply-like2" class="reply-like"><i class="icon-like-blue"></i>'];
+			break;
 		case 3:
-		var htmlText = ['<div  id="reply-like3" class="reply-like"><i class="icon-like-blue"></i>'];
-		break;
-	}
+			var htmlText = ['<div  id="reply-like3" class="reply-like"><i class="icon-like-blue"></i>'];
+			break;
+	}*/
+	var htmlText = ['<div  id="reply-like" class="reply-like"><i class="icon-like-blue"></i>'];
 	// 点赞人的html列表
 	var likesHtmlArr = [];
 	// 遍历生成
@@ -118,20 +125,21 @@ function likesHtmlTpl(likes,comments) {
 	// 每个点赞人以逗号加一个空格来相隔
 	var likesHtmlText = likesHtmlArr.join(', ');
 	htmlText.push(likesHtmlText);
-	switch(type){
+	/*switch (type) {
 		case 0:
-		htmlText.push('<a id="new-like0" value=1 class="reply-who" href="#"></a>');
-		break;
+			htmlText.push('<a id="new-like0" value=1 class="reply-who" href="#"></a>');
+			break;
 		case 1:
-		htmlText.push('<a id="new-like1" value=1 class="reply-who" href="#"></a>');
-		break;
+			htmlText.push('<a id="new-like1" value=1 class="reply-who" href="#"></a>');
+			break;
 		case 2:
-		htmlText.push('<a id="new-like2" value=1 class="reply-who" href="#"></a>');
-		break;
+			htmlText.push('<a id="new-like2" value=1 class="reply-who" href="#"></a>');
+			break;
 		case 3:
-		htmlText.push('<a id="new-like3" value=1 class="reply-who" href="#"></a>');
-		break;
-	}
+			htmlText.push('<a id="new-like3" value=1 class="reply-who" href="#"></a>');
+			break;
+	}*/
+	htmlText.push('<a id="new-like" value=1 class="reply-who" href="#"></a>');
 	htmlText.push('</div>');
 	return htmlText.join('');
 }
@@ -141,26 +149,26 @@ function likesHtmlTpl(likes,comments) {
  * @return {String} 返回html字符串
  */
 function commentsHtmlTpl(comments) {
-	if (comments.length < 2) {
+	/*if (comments.length < 2) {
 		return '';
-	}
+	}*/
 	//不同页面通过type选择评论盒子的id
-	var type = comments[0].type;
-	switch(type){
+	/*var type = comments[0].type;
+	switch (type) {
 		case 0:
-		var htmlText = ['<div id="reply-comment0" class="reply-comment">'];
-		break;
+			var htmlText = ['<div id="reply-comment0" class="reply-comment">'];
+			break;
 		case 1:
-		var htmlText = ['<div id="reply-comment1" class="reply-comment">'];
-		break;
+			var htmlText = ['<div id="reply-comment1" class="reply-comment">'];
+			break;
 		case 2:
-		var htmlText = ['<div id="reply-comment2" class="reply-comment">'];
-		break;
+			var htmlText = ['<div id="reply-comment2" class="reply-comment">'];
+			break;
 		case 3:
-		var htmlText = ['<div id="reply-comment3" class="reply-comment">'];
-		break;
-	}
-	var htmlText = ['<div id="reply-comment0" class="reply-comment">'];
+			var htmlText = ['<div id="reply-comment3" class="reply-comment">'];
+			break;
+	}*/
+	var htmlText = ['<div id="reply-comment" class="reply-comment">'];
 	for (var i = 0, len = comments.length; i < len; i++) {
 		var comment = comments[i];
 		htmlText.push('<div class="comment-item"><a class="reply-who" href="#">' + comment.author + '</a>：' + comment.text +
@@ -177,7 +185,7 @@ function commentsHtmlTpl(comments) {
 function replyTpl(replyData) {
 	var htmlText = [];
 	htmlText.push('<div class="reply-zone">');
-	htmlText.push(likesHtmlTpl(replyData.likes,replyData.comments));
+	htmlText.push(likesHtmlTpl(replyData.likes, replyData.comments));
 	htmlText.push(commentsHtmlTpl(replyData.comments));
 	htmlText.push('</div>');
 	return htmlText.join('');
@@ -199,7 +207,7 @@ function multiplePicTpl(pics) {
 /**
  * 分享页面拼接函数
  */
-function share_page(pics,text) {
+function share_page(pics, text) {
 	var htmlText = [];
 	htmlText.push('<ul class="item-pic share-item-pic">');
 	htmlText.push('<img class="pic-item share-pic-item" src="http://coding.imweb.io/img/p3/transition-hover.jpg" />');
@@ -210,7 +218,7 @@ function share_page(pics,text) {
 /**
  * 单图片页面拼接函数
  */
-function onepic(pics){
+function onepic(pics) {
 	var htmlText = [];
 	htmlText.push('<ul class="item-pic">');
 	htmlText.push('<img class="pic-item onepic-pic-item" src="' + pics + '">');
@@ -229,6 +237,10 @@ function messageTpl(messageData) {
 	var content = messageData.content;
 	var htmlText = [];
 	htmlText.push('<div class="moments-item" data-index="0">');
+	htmlText.push('<div id="new-reply0" class="new-reply-item new-reply-item-before">');
+	htmlText.push('<input id="get-reply0" class="get-reply-item">');
+	htmlText.push('<button id="sent0" class="new-reply-button">' + c + '</button>');
+	htmlText.push('</div>');
 	// 消息用户头像
 	htmlText.push('<a class="item-left" href="#">');
 	htmlText.push('<img src="' + user.avatar + '" width="42" height="42" alt=""/>');
@@ -248,7 +260,7 @@ function messageTpl(messageData) {
 			contentHtml = multiplePicTpl(content.pics);
 			htmlText.push(contentHtml);
 			// 消息时间和回复按钮
-			htmlText.push('<div class="item-ft">');
+			/*htmlText.push('<div class="item-ft">');
 			htmlText.push('<span class="item-time">' + content.timeString + '</span>');
 			htmlText.push('<div id="reply-item0" class="buttom-content buttom-content-before">');
 			htmlText.push('<button id="likes-buttom0" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-like"></i>' + a + '</button>');
@@ -264,14 +276,14 @@ function messageTpl(messageData) {
 			htmlText.push('<input id="get-reply0" class="get-reply-item">');
 			htmlText.push('<button id="sent0" class="new-reply-button">' + c + '</button>');
 			htmlText.push('</div>');
-			return htmlText.join('');
+			return htmlText.join('');*/
 			break;
 		case 1:
 			// TODO: 实现分享消息
-			contentHtml = share_page(content.share.pics,content.share.text);
+			contentHtml = share_page(content.share.pics, content.share.text);
 			htmlText.push(contentHtml);
 			// 消息时间和回复按钮
-			htmlText.push('<div class="item-ft">');
+			/*htmlText.push('<div class="item-ft">');
 			htmlText.push('<span class="item-time">' + content.timeString + '</span>');
 			htmlText.push('<div id="reply-item1" class="buttom-content buttom-content-before">');
 			htmlText.push('<button id="likes-buttom1" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-like"></i>' + a + '</button>');
@@ -283,14 +295,14 @@ function messageTpl(messageData) {
 			// 消息回复模块（点赞和评论）
 			htmlText.push(replyTpl(messageData.reply));
 			htmlText.push('</div></div>');
-			return htmlText.join('');
+			return htmlText.join('');*/
 			break;
 		case 2:
 			// TODO: 实现单张图片消息
 			contentHtml = onepic(content.pics);
 			htmlText.push(contentHtml);
 			// 消息时间和回复按钮
-			htmlText.push('<div class="item-ft">');
+			/*htmlText.push('<div class="item-ft">');
 			htmlText.push('<span class="item-time">' + content.timeString + '</span>');
 			htmlText.push('<div id="reply-item2" class="buttom-content buttom-content-before">');
 			htmlText.push('<button id="likes-buttom2" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-like"></i>' + a + '</button>');
@@ -302,13 +314,13 @@ function messageTpl(messageData) {
 			// 消息回复模块（点赞和评论）
 			htmlText.push(replyTpl(messageData.reply));
 			htmlText.push('</div></div>');
-			return htmlText.join('');
+			return htmlText.join('');*/
 			break;
 		case 3:
 			// TODO: 实现无图片消息
 			htmlText.push(contentHtml);
 			// 消息时间和回复按钮
-			htmlText.push('<div class="item-ft">');
+			/*htmlText.push('<div class="item-ft">');
 			htmlText.push('<span class="item-time">' + content.timeString + '</span>');
 			htmlText.push('<div id="reply-item3" class="buttom-content buttom-content-before">');
 			htmlText.push('<button id="likes-buttom3" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-like"></i>' + a + '</button>');
@@ -320,129 +332,260 @@ function messageTpl(messageData) {
 			// 消息回复模块（点赞和评论）
 			htmlText.push(replyTpl(messageData.reply));
 			htmlText.push('</div></div>');
-			return htmlText.join('');
+			return htmlText.join('');*/
 			break;
 	}
+	htmlText.push('<div class="item-ft">');
+	htmlText.push('<span class="item-time">' + content.timeString + '</span>');
+	htmlText.push('<div id="reply-item" class="buttom-content buttom-content-before">');
+	htmlText.push(
+		'<button id="likes-buttom" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-like"></i>' + a +
+		'</button>');
+	htmlText.push(
+		'<button id="comments-buttom" type="button" class="mui-btn  mui-btn-block item-buttom "><i class="icon-comment"></i>' +
+		b + '</button>');
+	htmlText.push('</div>');
+	htmlText.push('<div id="reply" class="item-reply-btn">');
+	htmlText.push('<span class="item-reply"></span>');
+	htmlText.push('</div></div>');
+	// 消息回复模块（点赞和评论）
+	htmlText.push(replyTpl(messageData.reply));
+	htmlText.push('</div></div>');
+	return htmlText.join('');
 }
 
-
+var len = data.length;
+var replyLike = [];
+var newLike = []
+var replyComments = []
+var reply = [];
+var replyItem = [];
+var likesButtom = [];
+var commentsButtom = [];
 /**
  * 页面渲染函数：render
  */
 function render() {
 	// TODO: 目前只渲染了一个消息（多图片信息）,需要展示data数组中的所有消息数据。
-	var messageHtml = messageTpl(data[0]);
-	$momentsList.innerHTML += messageHtml;
-	var messageHtml = messageTpl(data[1]);
-	$momentsList.innerHTML += messageHtml;
-	var messageHtml = messageTpl(data[2]);
-	$momentsList.innerHTML += messageHtml;
-	var messageHtml = messageTpl(data[3]);
-	$momentsList.innerHTML += messageHtml;
+	for (var i = 0; i < len; i++) {
+		var messageHtml = messageTpl(data[i]);
+		$momentsList.innerHTML += messageHtml;
+		//回复按钮id赋予
+		reply.push('reply' + i);
+		replyItem.push('reply-item' + i);
+		likesButtom.push('likes-buttom' + i);
+		commentsButtom.push('comments-buttom' + i);
+		document.getElementById("reply").id = reply[i];
+		document.getElementById("reply-item").id = replyItem[i];
+		document.getElementById("likes-buttom").id = likesButtom[i];
+		document.getElementById("comments-buttom").id = commentsButtom[i];
+		//点赞按钮id赋予
+		replyLike.push('reply-like' + i);
+		document.getElementById("reply-like").id = replyLike[i];
+		//新点赞人id赋予
+		newLike.push('new-like' + i);
+		document.getElementById("new-like").id = newLike[i];
+		//评论按钮id赋予
+		replyComments.push('reply-comment' + i);
+		document.getElementById("reply-comment").id = replyComments[i];
+		//若无点赞评论人则隐藏点赞评论框
+		var likes = data[i].reply.likes;
+		if (likes == '') {
+			document.getElementById(replyLike[i]).classList.add('new-reply-item-before');
+		}
+		var comments = data[i].reply.comments;
+		if (comments.length < 2) {
+			document.getElementById(replyComments[i]).classList.add('new-reply-item-before');
+		}
+
+	}
 }
 
 /**
  * 页面绑定事件函数：bindEvent
  */
 function bindEvent() {
-	window.onload =function()
-    {
-        document.getElementById("sent0").style.background ="#EFEFF4";
-         
-        //用户按下按键时判断
-        document.getElementById("get-reply0").onkeydown = function()
-        {
-            if(document.getElementById("get-reply0").value=="")
-            {
-                document.getElementById("sent0").style.background ="#EFEFF4";
-                document.getElementById("sent0").onclick=function(){return false;};
-            }else
-            {
-                document.getElementById("sent0").style.background ="#4CD964"; 
-            }
-        }
-    }
+	window.onload = function() {
+		document.getElementById("sent0").style.background = "#EFEFF4";
+
+		//用户按下按键时判断
+		document.getElementById("get-reply0").onkeydown = function() {
+			if (document.getElementById("get-reply0").value == "") {
+				document.getElementById("sent0").style.background = "#EFEFF4";
+				document.getElementById("sent0").onclick = function() {
+					return false;
+				};
+			} else {
+				document.getElementById("sent0").style.background = "#4CD964";
+			}
+		}
+	}
 	// TODO: 完成页面交互功能事件绑定
 	// 多图片消息回复按钮监听
 	document.getElementById('reply0').addEventListener("click", function() {
 		document.getElementById("reply-item0").classList.remove("buttom-content-before");
-	},true)
+	}, true)
 	//多图片消息点赞按钮监听
-	document.getElementById('likes-buttom0').addEventListener("click",function(){
+	document.getElementById('likes-buttom0').addEventListener("click", function() {
 		var a = document.getElementById('new-like0');
-		if(a.value != 0)
-		{
-			a.innerHTML =", " + userName;
+		if (a.value != 0) {
+			a.innerHTML = ", " + userName;
 			document.getElementById('likes-buttom0').innerHTML = "<i class=\"icon-like\"></i>取消";
 			a.value = 0;
-		}
-		else
-		{
+		} else {
 			a.innerHTML = ''
 			document.getElementById('likes-buttom0').innerHTML = "<i class=\"icon-like\"></i>点赞";
 			a.value = 1;
 		}
-	},true)
+	}, true)
 	//多图片消息评论按钮监听
 	document.getElementById('comments-buttom0').addEventListener("click", function() {
 		document.getElementById("new-reply0").classList.remove("new-reply-item-before")
-	},true)
+	}, true)
 	document.getElementById('sent0').addEventListener("click", function() {
-		var a = document.getElementById("get-reply0").value;//获得用户输入
-		if(a != '')
-		{
+		var a = document.getElementById("get-reply0").value; //获得用户输入
+		if (a != '') {
 			var i = document.createElement("div");
 			var h = document.getElementById('reply-comment0');
 			h.appendChild(i);
 			i.classList.add('comment-item')
-			i.innerHTML="<a class=\"reply-who\" href=\"#\">"+userName+"</a>："+a
+			i.innerHTML = "<a class=\"reply-who\" href=\"#\">" + userName + "</a>：" + a
 			document.getElementById("new-reply0").classList.add("new-reply-item-before")
 			document.getElementById("get-reply0").value = '';
-			document.getElementById("sent0").style.background ="#EFEFF4";
+			document.getElementById("sent0").style.background = "#EFEFF4";
 		}
-	},true)
+	}, true)
 	//多图片消息点击空白处收起
-	document.getElementById("body").addEventListener("click",function(){
+	document.getElementById("body").addEventListener("click", function() {
 		document.getElementById('reply-item0').classList.add("buttom-content-before");
-	},true)
-		// 分享消息回复按钮监听
+	}, true)
+	// 分享消息回复按钮监听
 	document.getElementById('reply1').addEventListener("click", function() {
 		document.getElementById("reply-item1").classList.remove("buttom-content-before");
-	},true)
+	}, true)
 	//分享消息点赞按钮监听
-	document.getElementById('likes-buttom1').addEventListener("click",function(){
+	document.getElementById('likes-buttom1').addEventListener("click", function() {
 		var a = document.getElementById('new-like1');
-		if(a.value != 0)
-		{
-			a.innerHTML =", " + userName;
+		if (a.value != 0) {
+			a.innerHTML = ", " + userName;
 			document.getElementById('likes-buttom1').innerHTML = "<i class=\"icon-like\"></i>取消";
 			a.value = 0;
-		}
-		else
-		{
+		} else {
 			a.innerHTML = ''
 			document.getElementById('likes-buttom1').innerHTML = "<i class=\"icon-like\"></i>点赞";
 			a.value = 1;
 		}
-	},true)
-	document.getElementById("body").addEventListener("click",function(){
+	}, true)
+	document.getElementById("body").addEventListener("click", function() {
 		document.getElementById('reply-item1').classList.add("buttom-content-before");
-	},true)
-		// 单图片消息回复按钮监听
+	}, true)
+	// 单图片消息回复按钮监听
 	document.getElementById('reply2').addEventListener("click", function() {
 		document.getElementById("reply-item2").classList.remove("buttom-content-before");
-	},true)
-	document.getElementById("body").addEventListener("click",function(){
+	}, true)
+	//单图片消息点赞按钮监听
+	document.getElementById('likes-buttom2').addEventListener("click", function() {
+		var a = document.getElementById('new-like2');
+		if (a.value != 0) {
+			document.getElementById(replyLike[2]).classList.remove('new-reply-item-before');
+			a.innerHTML = ", " + userName;
+			document.getElementById('likes-buttom2').innerHTML = "<i class=\"icon-like\"></i>取消";
+			a.value = 0;
+		} else {
+			document.getElementById(replyLike[2]).classList.add('new-reply-item-before');
+			a.innerHTML = ''
+			document.getElementById('likes-buttom2').innerHTML = "<i class=\"icon-like\"></i>点赞";
+			a.value = 1;
+		}
+	}, true)
+	document.getElementById("body").addEventListener("click", function() {
 		document.getElementById('reply-item2').classList.add("buttom-content-before");
-	},true)
-		// 无图片消息回复按钮监听
+	}, true)
+	// 无图片消息回复按钮监听
 	document.getElementById('reply3').addEventListener("click", function() {
 		document.getElementById("reply-item3").classList.remove("buttom-content-before");
-	},true)
-	document.getElementById("body").addEventListener("click",function(){
+	}, true)
+	document.getElementById("body").addEventListener("click", function() {
 		document.getElementById('reply-item3').classList.add("buttom-content-before");
-	},true)
+	}, true)
 }
+
+function bindEvent2() {
+	//回复按钮监听
+	/*for (var i = 0; i < len; i++) {
+		var a = reply[i];
+		var b = replyItem[i];
+		replyCp(a,b);
+	}
+	function replyCp(a,b){
+		document.getElementById(a).addEventListener("click", function() {
+			document.getElementById(b).classList.remove("buttom-content-before");
+		}, true);
+		document.getElementById("body").addEventListener("click", function() {
+			document.getElementById(b).classList.add("buttom-content-before");
+		}, true);
+	}*/
+	window.onload = function() {
+		var Body = document.getElementById("body");
+		Body.onmousemove = function(ev) {
+			var ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
+			if (target.nodeName.toLocaleLowerCase() == 'div') {
+				for (var i = 0; i < len; i++) {
+					var a = reply[i];
+					var b = replyItem[i];
+					replyCp(a, b);
+				}
+				function replyCp(a, b) {
+					document.getElementById(a).addEventListener("click", function() {
+						document.getElementById(b).classList.remove("buttom-content-before");
+					}, true);
+					document.getElementById("body").addEventListener("click", function() {
+						document.getElementById(b).classList.add("buttom-content-before");
+					}, true);
+				}
+			}
+			if (target.nodeName.toLocaleLowerCase() == 'button') {
+				for (var i = 0; i < len; i++) {
+					var c = likesButtom[i];
+					var d = newLike[i];
+					var f = replyLike[i];
+					var like = data[i].reply.likes;
+					likeCp(c, d, f, like);
+				}
+				function likeCp(c, d, f, like) {
+					document.getElementById(c).addEventListener("click", function() {
+						var a = document.getElementById(d);
+						if (a.value != 0) {
+							if(like == ''){
+								document.getElementById(f).classList.remove('new-reply-item-before');
+								a.innerHTML = userName;
+								document.getElementById(c).innerHTML = "<i class=\"icon-like\"></i>取消";
+								a.value = 0;
+							}else{
+								a.innerHTML = ", " + userName;
+								document.getElementById(c).innerHTML = "<i class=\"icon-like\"></i>取消";
+								a.value = 0;
+							}
+							/*a.innerHTML = ", " + userName;
+							document.getElementById(c).innerHTML = "<i class=\"icon-like\"></i>取消";
+							a.value = 0;*/
+						} else {
+							if(like == ''){
+								document.getElementById(f).classList.add('new-reply-item-before');
+							}
+							a.innerHTML = ''
+							document.getElementById(c).innerHTML = "<i class=\"icon-like\"></i>点赞";
+							a.value = 1;
+						}
+					}, true)
+				}
+			}
+		}
+	}
+}
+
+
 /**
  * 页面入口函数：init
  * 1、根据数据页面内容
@@ -451,7 +594,7 @@ function bindEvent() {
 function init() {
 	// 渲染页面
 	render();
-	bindEvent();
+	bindEvent2();
 }
 
 init();
