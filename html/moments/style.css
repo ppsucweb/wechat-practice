@@ -182,6 +182,7 @@
     background-size: 14px;
 }
 .moments-item .icon-like {
+<<<<<<< HEAD
 	display: inline-block;
 	vertical-align: -3px;
 	width: 14px;
@@ -201,6 +202,12 @@
     background: url(./img/comment.png) no-repeat;
 	background-size: 10px;
     
+=======
+    background: url(./img/like.png) no-repeat;
+}
+.moments-item .icon-comment {
+    background: url(./img/comment.png) no-repeat;
+>>>>>>> b15c21a11036c9e4ed7e12bc6ebe3b9c31c48318
 }
 .moments-item .icon-like,
 .moments-item .icon-comment {
@@ -216,6 +223,7 @@
 .moments-item .reply-like+.reply-comment {
     border-top: 1px solid #ccc;
 }
+<<<<<<< HEAD
 
 .share-item-pic{
 	width: 100%;
@@ -307,3 +315,5 @@
 	bottom: 20%;
 	height: 60%;
 }
+=======
+>>>>>>> b15c21a11036c9e4ed7e12bc6ebe3b9c31c48318
