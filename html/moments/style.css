@@ -1,4 +1,4 @@
-
+/*通用样式*/
 .page-moments {
     max-width: 640px;
     margin: 0 auto;
@@ -58,7 +58,7 @@
     font-size: 14px;
     line-height: 1.3;
 }
-
+/*分享消息样式*/
 .moments-item .item-share {
     display: flex;
     align-items: center;
@@ -69,21 +69,25 @@
 }
 .moments-item .item-share .share-img {
     margin-right: 5px;
+    width: 40px;
 }
 .moments-item .item-share .share-tt {
     line-height: 20px;
     max-height: 40px;
     overflow: hidden;
 }
+/*单图片消息图片容器样式*/
 .moments-item .item-only-img {
     max-width: 180px;
     max-height: 180px;
     margin-top: 10px;
 }
+/*图片列表样式*/
 .moments-item .item-pic {
     display: inline-block;
     vertical-align: middle;
 }
+/*图片item样式*/
 .moments-item .pic-item {
     float: left;
     width: 80px;
@@ -94,6 +98,7 @@
     background-size: cover;
     background-position: center;
 }
+/*动态发送时间及评论小图标容器样式*/
 .moments-item .item-ft {
     display: flex;
     justify-content: space-between;
@@ -101,10 +106,12 @@
     line-height: 36px;
     position: relative
 }   
+/*动态时间样式*/
 .moments-item .item-ft .item-time {
     color: #999;
     font-size: 12px;
 }
+/*评论按钮样式*/
 .moments-item .item-ft .item-reply-btn {
     position: absolute;
     right: 0px;
@@ -148,7 +155,7 @@
     left: 3px;
     transform: translate(0, -50%);
 }
-
+/*评论区容器样式*/
 .moments-item .reply-zone {
     background: #f0f0f0;
     margin-top: 5px;
@@ -181,26 +188,33 @@
     background: url(./img/like-blue.png) no-repeat;
     background-size: 14px;
 }
-.moments-item .icon-like {
-<<<<<<< HEAD
-	display: inline-block;
-	vertical-align: -3px;
-	width: 14px;
-	height: 14px;
-	margin-right: 2px;
-	margin-bottom: 2px;
-	background: url(./img/like.png) no-repeat;
-	background-size: 14px;
+.moments-item .reply-comment {
+    padding: 5px 8px;
 }
-.moments-item .icon-comment {
-	display: inline-block;
-	vertical-align: -3px;
-	width: 14px;
-	height: 14px;
-	margin-right: 2px;
-	margin-bottom: 2px;
-    background: url(./img/comment.png) no-repeat;
-	background-size: 10px;
+.moments-item .reply-like+.reply-comment {
+    border-top: 1px solid #ccc;
+}
+/*回复操作面板样式*/
+.moments-item .reply-btn-menu{
+    position: absolute;
+    right: 36px;
+    display: flex;
+    width: 11rem;
+    background: #3f4046;
+    color: white;
+    border-radius: 2px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.moments-item .menu-like,
+.moments-item .menu-comment{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.moments-item .icon-like {
     background: url(./img/like.png) no-repeat;
 }
 .moments-item .icon-comment {
@@ -211,103 +225,79 @@
     display: inline-block;
     width: 16px;
     height: 16px;
+    margin-right: 4px;
     background-size: cover;
     vertical-align: middle;
 }
-.moments-item .reply-comment {
-    padding: 5px 8px;
-}
-.moments-item .reply-like+.reply-comment {
-    border-top: 1px solid #ccc;
+.menu-display{
+    transform: scaleX(1) !important;
 }
 
-.share-item-pic{
-	width: 100%;
-	margin-top: 10px;
-	background-color: #F0F0F0;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
+/*图片展示舞台样式*/
+.img-display-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background: #000;
+    z-index: -1;
 }
-.share-pic-item{
-	height: 45px !important;
-	width: 45px !important;
-	margin: 0px !important;
+.img-display-wrap img{
+    width: 100%;
 }
-.onepic-pic-item{
-	height: 120px !important;
-	width: 160px !important;
+.img-display-wrap.displayed{
+    z-index: 999;
 }
-.buttom-content-before
-{  
-	transform-origin: right;
-	transform: scale(0,1);
+/*评论输入框样式*/
+.comments-input{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    border-top: 1px solid #f1efef;
+    background: #f9f8f8;
 }
-.buttom-content{
-	text-align: center;
-	margin-right: 40px;
-	width: 150px;
-	background-color:#000000;
-	border-radius: 3px;
-	transition: all 0.1s linear; 
+.comments-input.displayed{
+    z-index: 995;
 }
-.item-buttom{
-	line-height: 25px;
-	width: 60px;
-	padding: 3px;
-	border: 0px;
-	margin-bottom: 3px;
-	margin-left: 5px;
-	margin-right: 5px;
-	background-color: #000000;
-	color:white;
-	overflow: hidden;
+.comments-input-left{
+    flex: 1;
+    padding: 0 10px;
 }
-.new-reply-item{
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-	position: fixed;
-	bottom: 0px;
-	background-color: #EFEFF4;
-	border-top:0.5px solid;
-	border-bottom: 0.5px solid;
-	box-shadow: none;
-	z-index: 1000;
+#comments-input-text{
+    outline: none;
+    border: 1px solid #d7d5d7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 2rem;
+    width: 100%;
 }
-.new-reply-item-before{
-	display: none;
+.send-comment.input-btn-actived{
+    border: none;
+    background: rgb(66, 176, 11);
+    color: rgb(255, 255, 255);
 }
-.get-reply-item{
-	line-height: 25px;
-	width: 70%;
-	border-radius:6px ;
-	padding: 0px;
-	border: 0px;
+.comments-input-right{
+    display: flex;
+    align-items: center;
 }
-.new-reply-button{
-	line-height: 14px;
-	background-color: #EFEFF4;
-	color: white;
-	border-radius: 3px;
-	padding: 5px;
-	border: 0px;
-	margin-left: 10px;
+.comments-input-right .iconfont{
+    font-size: 2rem;
 }
-	
-.outerdiv{
-	position: fixed;
-	background: #000000;
-	z-index: 999;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.innerdiv{
-	position: absolute;
-	top: 20%;
-	bottom: 20%;
-	height: 60%;
+.send-comment{
+    border: 1px solid #d7d5d7;
+    border-radius: 5px;
+    color: #d7d5d7;
+    background: transparent;
+    outline: none;
+    width: 3rem;
+    height: 2rem;
+    margin: 0 10px;
 }
