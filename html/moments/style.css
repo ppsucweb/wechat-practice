@@ -1,0 +1,303 @@
+/*通用样式*/
+.page-moments {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+/* header */
+.header {
+    margin-bottom: 20px;
+}
+.header-banner {
+    padding-top: 100%;
+    position: relative;
+    margin-top: -25%;
+    background: url(./img/bg.png) no-repeat;
+    background-size: cover;
+}
+.header-user {
+    display: flex;
+    margin-top: -52px;
+    align-items: center;
+    text-shadow: 1px 1px #999;
+    justify-content: flex-end;
+    position: relative;
+}
+.header-user .user-name {
+    font-size: 16px;
+    color: #fff;
+}
+.header-user .user-link {
+    padding: 2px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    margin: 0 10px;
+}
+
+/* moments */
+
+.moments-item {
+    display: flex;
+    padding: 20px 10px;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 14px;
+    position: relative;
+}
+.moments-item .item-left {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.moments-item .item-right {
+    flex: 1;
+    overflow: hidden;
+}
+.moments-item .item-name {
+    color: #637ab4;
+    font-size: 14px;
+    line-height: 1.3;
+}
+/*分享消息样式*/
+.moments-item .item-share {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: #f3f3f3;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.moments-item .item-share .share-img {
+    margin-right: 5px;
+    width: 40px;
+}
+.moments-item .item-share .share-tt {
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+}
+/*单图片消息图片容器样式*/
+.moments-item .item-only-img {
+    max-width: 180px;
+    max-height: 180px;
+    margin-top: 10px;
+}
+/*图片列表样式*/
+.moments-item .item-pic {
+    display: inline-block;
+    vertical-align: middle;
+}
+/*图片item样式*/
+.moments-item .pic-item {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*动态发送时间及评论小图标容器样式*/
+.moments-item .item-ft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 36px;
+    position: relative
+}   
+/*动态时间样式*/
+.moments-item .item-ft .item-time {
+    color: #999;
+    font-size: 12px;
+}
+/*评论按钮样式*/
+.moments-item .item-ft .item-reply-btn {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 36px;
+    text-align: right;
+    height: 36px;
+    z-index: 2;
+    background: #fff;
+}
+.moments-item .item-ft .item-reply {
+    background: currentColor;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+    color: #8c99c1;
+    vertical-align: middle;
+}
+.moments-item .item-ft .item-reply::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 3px solid currentColor;
+    border-color: transparent currentColor transparent transparent;
+    border-width : 2px 3px;
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.moments-item .item-ft .item-reply::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 1px;
+    box-shadow: 7px 0 0 #fff;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translate(0, -50%);
+}
+/*评论区容器样式*/
+.moments-item .reply-zone {
+    background: #f0f0f0;
+    margin-top: 5px;
+    position: relative;
+}
+.moments-item .reply-zone .reply-who {
+    color: #637ab4;
+}
+.moments-item .reply-zone::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 8px solid #f3f3f3;
+    border-color: transparent transparent #f3f3f3 transparent;
+    border-width: 8px 8px;
+    top: -14px;
+    left: 8px;
+}
+.moments-item .reply-like {
+    padding: 2px 8px 2px;
+    color: #637ab4;
+}
+.moments-item .icon-like-blue {
+    display: inline-block;
+    vertical-align: -3px;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    background: url(./img/like-blue.png) no-repeat;
+    background-size: 14px;
+}
+.moments-item .reply-comment {
+    padding: 5px 8px;
+}
+.moments-item .reply-like+.reply-comment {
+    border-top: 1px solid #ccc;
+}
+/*回复操作面板样式*/
+.moments-item .reply-btn-menu{
+    position: absolute;
+    right: 36px;
+    display: flex;
+    width: 11rem;
+    background: #3f4046;
+    color: white;
+    border-radius: 2px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.moments-item .menu-like,
+.moments-item .menu-comment{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.moments-item .icon-like {
+    background: url(./img/like.png) no-repeat;
+}
+.moments-item .icon-comment {
+    background: url(./img/comment.png) no-repeat;
+}
+.moments-item .icon-like,
+.moments-item .icon-comment {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-size: cover;
+    vertical-align: middle;
+}
+.menu-display{
+    transform: scaleX(1) !important;
+}
+
+/*图片展示舞台样式*/
+.img-display-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background: #000;
+    z-index: -1;
+}
+.img-display-wrap img{
+    width: 100%;
+}
+.img-display-wrap.displayed{
+    z-index: 999;
+}
+/*评论输入框样式*/
+.comments-input{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    border-top: 1px solid #f1efef;
+    background: #f9f8f8;
+}
+.comments-input.displayed{
+    z-index: 995;
+}
+.comments-input-left{
+    flex: 1;
+    padding: 0 10px;
+}
+#comments-input-text{
+    outline: none;
+    border: 1px solid #d7d5d7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 2rem;
+    width: 100%;
+}
+.send-comment.input-btn-actived{
+    border: none;
+    background: rgb(66, 176, 11);
+    color: rgb(255, 255, 255);
+}
+.comments-input-right{
+    display: flex;
+    align-items: center;
+}
+.comments-input-right .iconfont{
+    font-size: 2rem;
+}
+.send-comment{
+    border: 1px solid #d7d5d7;
+    border-radius: 5px;
+    color: #d7d5d7;
+    background: transparent;
+    outline: none;
+    width: 3rem;
+    height: 2rem;
+    margin: 0 10px;
+}
