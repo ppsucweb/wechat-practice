@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>聊天界面</title>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/chat.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/icons-extra.css" rel="stylesheet" />
+		<link href="../css/chat.css" rel="stylesheet" />
+	</head>
+	<body id="body" style="padding-bottom: 80px;">
+		<header class="mui-bar mui-bar-nav" style="box-shadow: none;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="text-align: left;margin-top: 1px;">神秘的友人A</h1>
+			<div style="text-align: right; color: #000000;">
+				<span class="mui-icon mui-icon-more"></span>
+			</div>
+		</header>
+		<div class="item-input-bottom">
+			<input id="user-input" class="input-bottom" />
+			<span class="mui-icon mui-icon-plus icon-plus"></span>
+			<button id="input-sent" class="sent-button">发送</button>
+		</div>
+		<div class="mui-content">
+			<div id="item-chat">
+				<ul id="chat-ul" style="padding: 0px 5px;">
+					<li id="li1" class="user-li-right">
+						<img class="item-chat-right" src="../img/FJ.jpg" />
+						<div id="test1" class="chat-text-right">
+							<div class="arrow-right"></div>
+							<h4>很厉害6666666666666666666666666666666666666666666666</h4>
+						</div>
+					</li>
+					<li id="li2" class="user-li-left">
+						<img class="item-chat-left" src="../img/FJ.jpg" />
+						<div id="test2" class="chat-text-left">
+							<div class="arrow-left"></div>
+							<h4>很厉害</h4>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var a = document.getElementById('test1').offsetHeight;
+			document.getElementById('li1').style.height = a+"px" ;
+		</script>
+	</body>
+</html>

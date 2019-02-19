@@ -1,0 +1,92 @@
+.item-input-bottom{
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid #CCCCCC ;
+	z-index: 1000;
+	width: 100%;
+	text-align: center;
+}
+.input-bottom{
+	margin: 5px;
+	margin-right: 12%;
+	border: 0px;
+	width: 60%;
+	border-radius: 3px;
+	line-height: 30px;
+}
+.sent-button{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-color: chartreuse;
+}
+.icon-plus{
+	position: absolute;
+	right: 15%;
+	top: 5px;
+	padding-right: 5px;
+	font-size: 30px;
+}
+.item-chat-right{
+	width: 40px;
+	height: 40px;
+	border-radius:3px;
+}
+li{
+	position: relative;
+	margin: 10px 0px;
+}
+.chat-text-right{
+	position: absolute;
+	text-align: left;
+	top: 0;
+	right: 16%;
+	border-radius: 3px;
+	background-color: #4CD964;
+	padding: 6px 10px;
+	max-width: 50%;
+}
+.chat-text-left{
+	position: absolute;
+	top: 0;
+	left: 16%;
+	border-radius: 3px;
+	background-color: #4CD964;
+	padding: 6px 10px;
+	max-width: 50%;
+}
+.arrow-right{
+position:absolute;
+top:12px;
+right:-12px; /* 圆角的位置需要细心调试哦 */
+width:0;
+height:0;
+font-size:0;
+border:solid 6px;
+border-color:#EEEEEE #EEEEEE #EEEEEE #4CD964 ;
+}
+.arrow-left{
+	position:absolute;
+	top:12px;
+	left:-12px; /* 圆角的位置需要细心调试哦 */
+	width:0;
+	height:0;
+	font-size:0;
+	border:solid 6px;
+	border-color:#EEEEEE #4CD964 #EEEEEE #EEEEEE ;
+}
+.user-li-right{
+	text-align: right;
+}
+.user-li-left{
+	text-align: left;
+}
+.item-chat-left{
+	width: 40px;
+	height: 40px;
+	border-radius:3px;
+}
+h4{
+	word-wrap:break-word; 
+    word-break:break-all; 
+}
