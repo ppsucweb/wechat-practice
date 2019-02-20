@@ -24,6 +24,7 @@ function startRecognize() {
 	plus.speech.startRecognize(options, function(s) {
 		text += s;
 		document.getElementById('user-input').value = text;
+		document.getElementById('input-sent').classList.remove('display-none');
 	}, function(e) {
 		alert("语音识别失败：" + e.message);
 	});
