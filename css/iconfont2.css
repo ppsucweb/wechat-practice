@@ -1,0 +1,48 @@
+@font-face {font-family: "iconfont";
+  src:url('../fonts/iconfont2.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gengduo:before {
+  content: "\e618";
+}
+
+.icon-erweima:before {
+  content: "\e680";
+}
+
+.icon-jiejing:before {
+  content: "\e666";
+}
+
+.icon-xiangji:before {
+  content: "\e6c3";
+}
+
+.icon-fengmian:before {
+  content: "\e636";
+}
+
+.icon-yuyinshuru:before {
+  content: "\e74e";
+}
+
+.icon---:before {
+  content: "\e62d";
+}
+
+.icon-biaoqing:before {
+  content: "\e60b";
+}
+
+.icon-fanyix:before {
+  content: "\e6ee";
+}
+

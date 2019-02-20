@@ -34,6 +34,11 @@
     background: #fff;
     margin: 0 10px;
 }
+.user-link{
+	border: 0px !important;
+	padding: 0px !important;
+	background: transparent !important;
+}
 
 /* moments */
 
@@ -300,4 +305,17 @@
     width: 3rem;
     height: 2rem;
     margin: 0 10px;
+}
+.back{
+	position: absolute;
+	top: 30%;
+	left: 3%;
+	color: white;
+}
+.icon-xiangji{
+	position: absolute;
+	top: 28%;
+	right: 3%;
+	font-size: 25px !important;
+	color: white;
 }

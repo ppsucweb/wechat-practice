@@ -1,0 +1,150 @@
+.item-input-bottom {
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid #CCCCCC;
+	z-index: 1000;
+	width: 100%;
+	text-align: center;
+	background-color: #EEEEEE;
+}
+
+.input-bottom {
+	margin: 5px;
+	margin-right: 16%;
+	border: 0px;
+	width: 57%;
+	border-radius: 3px;
+	line-height: 30px;
+}
+
+.sent-button {
+	position: absolute;
+	color: white;
+	border: 0px;
+	top: 5px;
+	right: 5px;
+	width: 50px;
+	padding: 6px 10px;
+	background-color: #2AC845;
+}
+
+.icon-biaoqing {
+	position: absolute;
+	right: 16%;
+	top: 5px;
+	padding-right: 5px;
+	font-size: 30px;
+}
+
+.icon-chat {
+	position: absolute;
+	top: 15%;
+	left: 3%;
+	font-size: 30px;
+}
+.icon-plus{
+	position: absolute;
+	right: 2%;
+	top: 3px;
+	padding-right: 5px;
+	font-size: 35px;
+}
+
+.item-chat-right {
+	position: absolute;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	border-radius: 3px;
+}
+
+li {
+	position: relative;
+	margin: 10px 0px;
+	list-style-type: none;
+	zoom: 1;
+}
+
+li:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0
+}
+
+.chat-text-right {
+	position: relative;
+	float: right;
+	text-align: left;
+	margin-right: 16%;
+	border-radius: 3px;
+	background-color: #4CD964;
+	padding: 6px 10px;
+	max-width: 50%;
+}
+
+.chat-text-right::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 10px solid #f3f3f3;
+	border-color: transparent transparent transparent #4CD964;
+	border-width: 10px 10px;
+	right:-15px;
+	top: 7px;
+}
+
+.chat-text-left {
+	position: relative;
+	float: left;
+	margin-left: 16%;
+	border-radius: 3px;
+	background-color: #4CD964;
+	padding: 6px 10px;
+	max-width: 50%;
+}
+
+.chat-text-left::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 10px solid #f3f3f3;
+	border-color: transparent #4CD964 transparent transparent;
+	border-width: 10px 10px;
+	top: 10px;
+	left: -15px;
+}
+
+.user-li-right {
+	text-align: right;
+}
+
+.user-li-left {
+	text-align: left;
+}
+
+.item-chat-left {
+	position: absolute;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	border-radius: 3px;
+}
+
+h4 {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.display-none{
+	display: none;
+}

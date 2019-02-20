@@ -11,6 +11,14 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
+		<script type="text/javascript" charset="UTF-8">
+			function openWindow(filename, id) {
+				mui.openWindow({
+					url: filename,
+					id: id
+				});
+			}
+		</script>
 	</head>
 	<body>
 		<div class="mui-content" style="margin-top: -15px;">
@@ -20,7 +28,7 @@
 							留声英语
 							<p>课程进度提醒</p>
 					</li>
-					<li class="mui-table-view-cell">
+					<li class="mui-table-view-cell" onclick="openWindow('chat.html','chat')">
 					<img class="mui-media-object mui-pull-left" src="../img/SDZ.jpg" style="border-radius: 6px;"/>
 							<span class="red-point"></span>
 								神秘的友人A
